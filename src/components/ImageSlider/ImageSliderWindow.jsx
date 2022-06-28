@@ -316,7 +316,11 @@ const ImageSliderWindow = () => {
               className="btn-close imagepreview-closeBtn"
               onClick={() => setImagePreview(!imagePreview)}
             ></button>
-            <img src={RupeeImage1} className="image-preview" />
+            <img
+              src={RupeeImage1}
+              className="image-preview"
+              alt="uploadImgPreview"
+            />
           </Modal.Body>
         </Modal>
       )}
