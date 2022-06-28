@@ -170,7 +170,7 @@
 
 
 .upload-slide-modal .modal-content {
-  width: 675px;
+  max-width: 675px;
   background-color: var(--background-white);
 }
 
@@ -258,6 +258,9 @@
   font-size: var(--font-size14);
   color: var(--color-black);
 }
+.uploaded-data-list li:hover {
+background-color: var(--table-hover-color);
+}
 
 
 .submitSlide {
@@ -278,6 +281,35 @@
   height: 32px;
   border-radius: 4px;
 
+}
+
+
+/* image preview */
+
+.image-preview-modal .modal-content{
+  max-width: 550px;
+}
+
+
+.image-preview-body{
+  padding: 0 !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imagepreview-closeBtn{
+  position: absolute;
+  right: 1%;
+  top: 1%;
+    background: transparent url(../../images/common/modalClose.svg) center/1.5em auto no-repeat;
+      opacity: 1;
+}
+
+.image-preview{
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
 }
 
 

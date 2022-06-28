@@ -28,6 +28,9 @@ import RupeeImage3 from "./../../images/common/rupee3.jpg";
 const ImageSliderWindow = () => {
   // Modals
   const [attachment, setAttachment] = useState(false);
+  const [imagePreview, setImagePreview] = useState(false);
+
+  // Images User Data
   const [users, setUsers] = useState(userdata.data);
 
   //   Date Calendar
@@ -151,7 +154,12 @@ const ImageSliderWindow = () => {
                                   delay={{ show: 250, hide: 400 }}
                                   overlay={renderViewTooltip}
                                 >
-                                  <button className="act-view-Btn">
+                                  <button
+                                    className="act-view-Btn"
+                                    onClick={() =>
+                                      setImagePreview(!imagePreview)
+                                    }
+                                  >
                                     <img src={ViewIcon} alt="view Icon" />
                                   </button>
                                 </OverlayTrigger>
@@ -289,6 +297,30 @@ const ImageSliderWindow = () => {
                 </button>
               </div>
             </div>
+          </Modal.Body>
+        </Modal>
+      )}
+
+      {/* Image Preview*/}
+
+      {imagePreview && (
+        <Modal
+          show={imagePreview}
+          onHide={() => setImagePreview(!imagePreview)}
+          centered
+          className="defaultThemeModal centeredModal unmatchedTableModal mobile-defaultThemeModal image-preview-modal"
+        >
+          <Modal.Body className="image-preview-body">
+            {/* close btn */}
+            <button
+              className="btn-close imagepreview-closeBtn"
+              onClick={() => setImagePreview(!imagePreview)}
+            ></button>
+            <img
+              src={RupeeImage1}
+              className="image-preview"
+              alt="preview image"
+            />
           </Modal.Body>
         </Modal>
       )}
